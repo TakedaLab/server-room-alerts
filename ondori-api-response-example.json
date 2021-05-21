@@ -1,0 +1,74 @@
+{
+  "devices": [
+    {
+      "num": "1",
+      "serial": "52185FBB",
+      "model": "TR-72nw",
+      "name": "Entrance",
+      "battery": "5",
+      "rssi": "",
+      "time_diff": "540",
+      "std_bias": "0",
+      "dst_bias": "0",
+      "unixtime": "1621594658",
+      "channel": [
+        {
+          "num": "1",
+          "name": "Ch.1",
+          "value": "34.3",
+          "unit": "C"
+        },
+        {
+          "num": "2",
+          "name": "Ch.2",
+          "value": "27",
+          "unit": "%"
+        }
+      ],
+      "baseunit": {
+        "serial": "52185FBB",
+        "model": "TR-72nw",
+        "name": "Entrance"
+      },
+      "group": {
+        "num": "0",
+        "name": "ServerRoom"
+      }
+    },
+    {
+      "num": "2",
+      "serial": "ABCDEFG",
+      "model": "TR-72nw",
+      "name": "2nd",
+      "battery": "5",
+      "rssi": "",
+      "time_diff": "540",
+      "std_bias": "0",
+      "dst_bias": "0",
+      "unixtime": "1621594658",
+      "channel": [
+        {
+          "num": "1",
+          "name": "Ch.1",
+          "value": "35",
+          "unit": "C"
+        },
+        {
+          "num": "2",
+          "name": "Ch.2",
+          "value": "30",
+          "unit": "%"
+        }
+      ],
+      "baseunit": {
+        "serial": "ABCDEFG",
+        "model": "TR-72nw",
+        "name": "2nd"
+      },
+      "group": {
+        "num": "0",
+        "name": "ServerRoom"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+name: CronJob
+on:
+  schedule:
+    # 分 時 日 月 曜日
+    - cron: '*/5 * * * *'
+
+jobs:
+  cronjob:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+
+      - name: Run ondotori
+        env:
+          ONDOTORI_API_KEY: ${{ secrets.ONDOTORI_API_KEY }}
+          ONDOTORI_LOGIN_ID: ${{ secrets.ONDOTORI_LOGIN_ID }}
+          ONDOTORI_LOGIN_PASS: ${{ secrets.ONDOTORI_LOGIN_PASS }}
+          ONDOTORI_ALERT_THRESHOLD_TEMPERATURE: ${{ secrets.ONDOTORI_ALERT_THRESHOLD_TEMPERATURE }}
+          ONDOTORI_ALERT_THRESHOLD_HUMIDITY: ${{ secrets.ONDOTORI_ALERT_THRESHOLD_HUMIDITY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        shell: bash
+        run: ./ondotori.sh
