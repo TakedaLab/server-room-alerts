@@ -41,14 +41,14 @@ max_humid=$(cat ${response} | jq -r '.devices[].channel | map(select(.unit == "%
 [[ ! -n "${max_humid}" ]] && echo "Failed to get humidity" >&2 && exit 1
 
 # Alert
-if (( $(echo "$max_temp > $threshold_temperature" | bc -l) )); then
+if [[ "$(echo ${max_temp} | to_int)" -ge "${threshold_temperature}" ]]; then
   echo "Too hot!"
   curl --request POST "${SLACK_WEBHOOK_URL}" \
     -d "{
       \"text\": \"サーバー室がアチアチです :fire:\n温度: ${max_temp}℃\n湿度: ${max_humid}%\"
     }"
 
-elif (( $(echo "$max_humid > $threshold_humidity" | bc -l) )); then
+elif [[ "$(echo ${max_humid} | to_int)" -ge "${threshold_humidity}" ]]; then
   echo "Too humid!"
   curl --request POST "${SLACK_WEBHOOK_URL}" \
     -d "{

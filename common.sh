@@ -16,7 +16,7 @@ function min() {
 export -f min
 
 
-function test1() {
-  cat -
+function to_int() {
+  value=$(cat -) && echo ${value%.*}
 }
-export -f test1
+export -f to_int
