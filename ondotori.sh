@@ -52,6 +52,6 @@ elif (( $(echo "$max_humid > $threshold_humidity" | bc -l) )); then
   echo "Too humid!"
   curl --request POST "${SLACK_WEBHOOK_URL}" \
     -d "{
-      \"text\": \"サーバー室がモワモワです :fire:\n温度: ${max_temp}℃\n湿度: ${max_humid}%\"
+      \"text\": \"サーバー室がモワモワです :sweat_drops:\n温度: ${max_temp}℃\n湿度: ${max_humid}%\"
     }"
 fi
